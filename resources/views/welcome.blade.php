@@ -21,7 +21,7 @@
     </head>
     <body class="antialiased">
         <div id="app">
-            <todo />
+            <App />
         </div>
         
         <!-- Scripts -->
