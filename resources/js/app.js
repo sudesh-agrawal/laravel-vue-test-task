@@ -3,10 +3,12 @@ require('./bootstrap');
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+
 import VueRouter from 'vue-router'
 import router from './router'
-import store from './store'
 import App from './layouts/App'
+
+import store from './store'
 
 
 axios.defaults.withCredentials = true
@@ -15,7 +17,6 @@ const token = localStorage.getItem('token')
 if(token){
   axios.defaults.headers.common['Authorization'] = token
 }
-
 
 // manage error and expire token
 
@@ -32,13 +33,6 @@ axios.interceptors.response.use(undefined, function (error) {
     }
   }
 })
-
-
-
-
-
-
-
 
 Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
